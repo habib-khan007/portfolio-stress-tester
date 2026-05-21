@@ -94,8 +94,8 @@ export function HoldingRow({ holding, onChange, onRemove }) {
 const styles = {
   row: {
     display: "grid",
-    gridTemplateColumns: "64px 1fr 1fr 1fr 28px",
-    gap: "5px",
+    gridTemplateColumns: "56px 1fr 1fr 1fr 24px",
+    gap: "4px",
     marginBottom: "6px",
     alignItems: "center",
   },

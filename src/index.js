@@ -9,15 +9,12 @@ import App from "./App";
 // Global reset styles
 const globalStyles = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #08090d; }
+  html, body { background: #08090d; overflow-x: hidden; max-width: 100vw; }
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button { opacity: 0.4; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-  @media (max-width: 900px) {
-    .layout { flex-direction: column !important; }
-  }
 `;
 
 const styleTag = document.createElement("style");

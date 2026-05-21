@@ -34,8 +34,8 @@ export function BeforeAfterChart({ totalCurr, totalSim }) {
   return (
     <div style={CARD}>
       <div style={LABEL}>Before vs. After</div>
-      <ResponsiveContainer width="100%" height={160}>
-        <BarChart data={data} barSize={40}>
+      <ResponsiveContainer width="100%" height={150}>
+        <BarChart data={data} barSize={36}>
           <XAxis dataKey="name" tick={{ fill: "#9ca3af", fontSize: 11 }} axisLine={false} tickLine={false} />
           <YAxis hide />
           <Tooltip
@@ -62,7 +62,7 @@ export function AllocationPie({ details, totalCurr }) {
   return (
     <div style={CARD}>
       <div style={LABEL}>Allocation</div>
-      <ResponsiveContainer width="100%" height={160}>
+      <ResponsiveContainer width="100%" height={150}>
         <PieChart>
           <Pie
             data={data}

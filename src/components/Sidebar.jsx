@@ -76,7 +76,7 @@ export function Sidebar({
   };
 
   return (
-    <div style={styles.sidebar}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
 
       {/* ── Holdings ── */}
       <Section label="Holdings">

@@ -1,0 +1,212 @@
+/* ── Global Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  background: #08090d;
+}
+
+/* ── Nav ──────────────────────────────────────────────────────────────────── */
+.pst-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(8,9,13,0.97);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pst-brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.pst-tabs {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.pst-tab-btn {
+  font-family: inherit;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+.pst-layout {
+  display: flex;
+  min-height: calc(100vh - 53px);
+  overflow-x: hidden;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+.pst-sidebar {
+  width: 300px;
+  min-width: 280px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(10,11,16,0.8);
+  overflow-y: auto;
+}
+
+/* ── Main Content ─────────────────────────────────────────────────────────── */
+.pst-content {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Metrics Bar ──────────────────────────────────────────────────────────── */
+.pst-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ── Charts 3-col ─────────────────────────────────────────────────────────── */
+.pst-charts3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  gap: 14px;
+}
+
+/* ── Charts 2-col ─────────────────────────────────────────────────────────── */
+.pst-charts2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ── Scenario Grid ────────────────────────────────────────────────────────── */
+.pst-scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* ── Mobile toggle button (hamburger) ─────────────────────────────────────── */
+.pst-mobile-toggle {
+  display: none;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: #9ca3af;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Tablet: 768px ────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .pst-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pst-charts3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pst-charts3 > *:last-child {
+    grid-column: 1 / -1;
+  }
+  .pst-scenario-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile: 640px ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  .pst-nav {
+    padding: 10px 14px;
+  }
+
+  .pst-brand {
+    font-size: 12px;
+  }
+
+  .pst-tab-btn {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  .pst-mobile-toggle {
+    display: block;
+  }
+
+  /* Sidebar becomes a drawer that collapses */
+  .pst-layout {
+    flex-direction: column;
+  }
+
+  .pst-sidebar {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    max-height: none;
+  }
+
+  .pst-sidebar.collapsed {
+    display: none;
+  }
+
+  .pst-content {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  /* All grids go single column on mobile */
+  .pst-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .pst-charts3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pst-charts2 {
+    grid-template-columns: 1fr;
+  }
+
+  .pst-scenario-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+/* ── Very small phones: 390px ─────────────────────────────────────────────── */
+@media (max-width: 430px) {
+  .pst-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pst-scenario-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
